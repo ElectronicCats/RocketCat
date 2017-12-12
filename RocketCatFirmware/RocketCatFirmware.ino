@@ -7,6 +7,10 @@
 
 Adafruit_BMP085_Unified bmp = Adafruit_BMP085_Unified(10085);
 
+/* Assign a unique ID to this sensor at the same time */
+Adafruit_HMC5883_Unified mag = Adafruit_HMC5883_Unified(12345);
+
+
 // class default I2C address is 0x68
 // specific I2C addresses may be passed as a parameter here
 // AD0 low = 0x68 (default for InvenSense evaluation board)
@@ -49,6 +53,14 @@ void setup() {
     // verify connection
     Serial.println("Testing device connections...");
     Serial.println(accelgyro.testConnection() ? "MPU6050 connection successful" : "MPU6050 connection failed");
+
+     /* Initialise the sensor */
+  if(!mag.begin())
+  {
+    /* There was a problem detecting the HMC5883 ... check your connections */
+    Serial.println(F("Ooops, no HMC5883 detected ... Check your wiring!"));
+    while(1);
+  }
   
 }
 
@@ -128,6 +140,7 @@ void loop() {
         Serial.write((uint8_t)(gz >> 8)); Serial.write((uint8_t)(gz & 0xFF));
     #endif
 
+  mag.getEvent(&event);
      /* Display the results (magnetic vector values are in micro-Tesla (uT)) */
   Serial.print("X: "); Serial.print(event.magnetic.x); Serial.print("  ");
   Serial.print("Y: "); Serial.print(event.magnetic.y); Serial.print("  ");
@@ -157,6 +170,6 @@ void loop() {
   
   Serial.print("Heading (degrees): "); Serial.println(headingDegrees);
 
-  delay(1000);
+  delay(500);
 
 }
