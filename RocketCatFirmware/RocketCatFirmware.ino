@@ -227,6 +227,10 @@ void loop() {
   //else//
   if (val == -2)
   { // If we're reading pins, print out those values:
+    s += "<html>";
+    s += "<head>";
+    s += "</head>";
+    s += "<body>";    
     s += "Pressure, Temperature and Altitude: ";
     s += (event.pressure);
     s += "<br>"; // Go to the next line.
