@@ -230,10 +230,26 @@ void loop() {
     s += "<html>";
     s += "<head>";
     s += "</head>";
-    s += "<body>";    
+    s += "<body>"; 
+    s += "<h1>RocketCat</h1>";       
     s += "Pressure, Temperature and Altitude: ";
+ bmp.getEvent(&event);
+    float temperature;
+    bmp.getTemperature(&temperature);
+    float seaLevelPressure = SENSORS_PRESSURE_SEALEVELHPA;
+    s += "<br>";
+    s += "Pressure= ";
     s += (event.pressure);
-    s += "<br>"; // Go to the next line.
+    s += " hPa";
+    s += "<br>";
+    s += "Temperature= ";
+    s += (temperature);
+    s += " &deg C";
+    s += "<br>";
+    s += "Altitude= ";
+    s += (bmp.pressureToAltitude(seaLevelPressure, event.pressure));
+    s += " m";
+    s += "<br><br>"; // Go to the next line.    
     s += "AccelGyroMetter: ";
     s += String();
     s += "<br>";
