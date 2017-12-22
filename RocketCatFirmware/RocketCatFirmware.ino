@@ -36,7 +36,7 @@ int16_t gx, gy, gz;
 //////////////////////
 // WiFi Definitions //
 //////////////////////
-const char WiFiAPPSK[] = "sparkfun";
+const char WiFiAPPSK[] = "rocketcat";
 
 WiFiServer server(80);
 
@@ -309,7 +309,7 @@ void loop() {
   }
   else
   {
-    s += "Invalid Request.<br> Try /led/1, /led/0, or /read.";
+    s += "Invalid Request.<br> Try /read.";
   }
   s += "</html>\n";
 
@@ -333,7 +333,7 @@ void setupWiFi()
   String macID = String(mac[WL_MAC_ADDR_LENGTH - 2], HEX) +
                  String(mac[WL_MAC_ADDR_LENGTH - 1], HEX);
   macID.toUpperCase();
-  String AP_NameString = "ESP8266 Thing " + macID;
+  String AP_NameString = "Rocket Cat " + macID;
 
   char AP_NameChar[AP_NameString.length() + 1];
   memset(AP_NameChar, 0, AP_NameString.length() + 1);
