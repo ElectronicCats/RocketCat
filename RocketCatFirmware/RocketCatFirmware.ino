@@ -251,8 +251,29 @@ void loop() {
     s += " m";
     s += "<br><br>"; // Go to the next line.    
     s += "AccelGyroMetter: ";
-    s += String();
+    accelgyro.getAcceleration(&ax, &ay, &az);
+    accelgyro.getRotation(&gx, &gy, &gz);
     s += "<br>";
+    s += "Acceleration= ";
+    s += "AX= ";
+    s += ax;
+    s += "&nbsp&nbsp&nbsp";
+    s += "AY= ";
+    s += ay;
+    s += "&nbsp&nbsp&nbsp";
+    s += "AZ= ";
+    s += az;
+    s += "<br>";
+    s += "Rotation= ";
+    s += "GX= ";
+    s += gx;
+    s += "&nbsp&nbsp&nbsp";
+    s += "GY= ";
+    s += gy;
+    s += "&nbsp&nbsp&nbsp";
+    s += "GZ+ ";
+    s += gz;
+    s += "<br><br><br>";
     s += "MagnetoMetter: ";
     s += String();
   }
