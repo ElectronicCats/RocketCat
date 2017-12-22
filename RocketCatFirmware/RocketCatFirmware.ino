@@ -304,6 +304,8 @@ void loop() {
     s += headingDegrees;
     s += "&deg";
     s += "<br>";
+    s += "<img src='http://1.bp.blogspot.com/-ZOTiMsWU51U/VjULnuhyYrI/AAAAAAAAAUM/sVpEHqz1TEA/s640/15%2B-%2B1.gif'>";
+    s += "<html>";
   }
   else
   {
