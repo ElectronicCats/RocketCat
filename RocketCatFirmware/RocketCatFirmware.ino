@@ -275,7 +275,35 @@ void loop() {
     s += gz;
     s += "<br><br><br>";
     s += "MagnetoMetter: ";
-    s += String();
+    s += "<br>";
+    mag.getEvent(&event);
+    float heading = atan2(event.magnetic.y, event.magnetic.x);
+    float declinationAngle = +5.22;
+     heading += declinationAngle;  
+  // Correct for when signs are reversed.
+  if(heading < 0)
+    heading += 2*PI;
+    // Check for wrap due to addition of declination.
+  if(heading > 2*PI)
+    heading -= 2*PI;
+    // Convert radians to degrees for readability.
+    float headingDegrees = heading * 180/M_PI; 
+    s += "X= ";
+    s += event.magnetic.x;
+    s += "&deg";
+    s += "&nbsp&nbsp&nbsp";
+    s += "Y= ";
+    s += event.magnetic.y;
+    s += "&deg";
+    s += "&nbsp&nbsp&nbsp";
+    s += "Z= ";
+    s += event.magnetic.z;
+    s += "&deg";
+    s += "<br>";
+    s += "Heading= ";
+    s += headingDegrees;
+    s += "&deg";
+    s += "<br>";
   }
   else
   {
