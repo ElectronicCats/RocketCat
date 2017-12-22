@@ -219,6 +219,7 @@ void loop() {
   String s = "HTTP/1.1 200 OK\r\n";
   s += "Content-Type: text/html\r\n\r\n";
   s += "<!DOCTYPE HTML>\r\n<html>\r\n";
+  s += "<meta http-equiv='refresh' content='5' >";
   
   // If we're setting the LED, print out a message saying we did
   //if (val >= 0)
