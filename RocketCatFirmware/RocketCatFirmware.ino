@@ -132,10 +132,6 @@ void loop() {
       // read raw accel/gyro measurements from device
     accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
 
-    // these methods (and a few others) are also available
-    //accelgyro.getAcceleration(&ax, &ay, &az);
-    //accelgyro.getRotation(&gx, &gy, &gz);
-
     #ifdef OUTPUT_READABLE_ACCELGYRO
         // display tab-separated accel/gyro x/y/z values
         Serial.print("a/g:\t");
@@ -202,16 +198,7 @@ void loop() {
   Serial.println(req);
   client.flush();
 
-  // Match the request
-  int val = -1; // We'll use 'val' to keep track of both the
-                // request type (read/set) and value if set. 
-  if (req.indexOf("/read") != -1)
-     val = -2; 
-  // Otherwise request will be invalid. We'll say as much in HTML
-
-  // Set GPIO5 according to the request
-  //if (val >= 0)
-    //digitalWrite(val);
+ // if
 
   client.flush();
 
@@ -221,11 +208,7 @@ void loop() {
   s += "<!DOCTYPE HTML>\r\n<html>\r\n";
   s += "<meta http-equiv='refresh' content='5' >";
   
-  // If we're setting the LED, print out a message saying we did
-  //if (val >= 0)
-
-  //else//
-  if (val == -2)
+  if  (req.indexOf("/read"))
   { // If we're reading pins, print out those values:
     s += "<html>";
     s += "<head>";
@@ -271,7 +254,7 @@ void loop() {
     s += "GY= ";
     s += gy;
     s += "&nbsp&nbsp&nbsp";
-    s += "GZ+ ";
+    s += "GZ= ";
     s += gz;
     s += "<br><br><br>";
     s += "MagnetoMetter: ";
