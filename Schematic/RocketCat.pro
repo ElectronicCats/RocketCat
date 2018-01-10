@@ -1,4 +1,4 @@
-update=lunes, 08 '08e' enero '08e' 2018, 12:19:39
+update=09/01/2018 13:18:10
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,6 +23,8 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -56,5 +58,4 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
-[general]
-version=1
+LibName30=C:/Users/Familia/Documents/GitHub/d1_mini_kicad-master/library/wemos_mini

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>C:\Users\Familia\Documents\New folder\Creations\RocketCat\Schematic\RocketCat.sch</source>
+    <date>09/01/2018 13:46:25</date>
+    <tool>Eeschema 4.0.7</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>RocketCat</title>
+        <company>Electronic Cats</company>
+        <rev>0.1</rev>
+        <date>2017-01-08</date>
+        <source>RocketCat.sch</source>
+        <comment number="1" value="Alex"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="U1">
+      <value>WeMos_mini</value>
+      <footprint>wemos_d1_mini:D1_mini_board</footprint>
+      <libsource lib="wemos_mini" part="WeMos_mini"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5A53C41B</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="wemos_mini" part="WeMos_mini">
+      <description>WeMos D1 mini</description>
+      <docs>http://www.wemos.cc/Products/d1_mini.html</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">WeMos_mini</field>
+      </fields>
+      <pins>
+        <pin num="1" name="5V" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="D4" type="BiDi"/>
+        <pin num="4" name="D3" type="BiDi"/>
+        <pin num="5" name="D2" type="BiDi"/>
+        <pin num="6" name="D1" type="BiDi"/>
+        <pin num="7" name="Rx" type="BiDi"/>
+        <pin num="8" name="Tx" type="BiDi"/>
+        <pin num="9" name="Rst" type="BiDi"/>
+        <pin num="10" name="A0" type="BiDi"/>
+        <pin num="11" name="D0" type="BiDi"/>
+        <pin num="12" name="D5" type="BiDi"/>
+        <pin num="13" name="D6" type="BiDi"/>
+        <pin num="14" name="D7" type="BiDi"/>
+        <pin num="15" name="D8" type="BiDi"/>
+        <pin num="16" name="3.3V" type="power_out"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="wemos_mini">
+      <uri>C:\Users\Familia\Documents\GitHub\d1_mini_kicad-master\library\wemos_mini.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="LINE">
+      <node ref="U1" pin="13"/>
+      <node ref="U1" pin="2"/>
+      <node ref="U1" pin="3"/>
+      <node ref="U1" pin="4"/>
+      <node ref="U1" pin="5"/>
+      <node ref="U1" pin="6"/>
+      <node ref="U1" pin="7"/>
+      <node ref="U1" pin="8"/>
+      <node ref="U1" pin="9"/>
+      <node ref="U1" pin="10"/>
+      <node ref="U1" pin="11"/>
+      <node ref="U1" pin="14"/>
+      <node ref="U1" pin="15"/>
+      <node ref="U1" pin="16"/>
+      <node ref="U1" pin="1"/>
+      <node ref="U1" pin="12"/>
+    </net>
+  </nets>
+</export>
