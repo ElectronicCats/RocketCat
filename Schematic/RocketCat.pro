@@ -1,4 +1,4 @@
-update=09/01/2018 13:18:10
+update=11/01/2018 12:33:33
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,3 +59,4 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=C:/Users/Familia/Documents/GitHub/d1_mini_kicad-master/library/wemos_mini
+LibName31=C:/Users/Familia/Documents/Schematic/MCP73831T-4ADI_OT
