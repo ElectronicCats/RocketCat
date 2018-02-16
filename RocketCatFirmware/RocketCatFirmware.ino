@@ -206,7 +206,8 @@ void loop() {
   String s = "HTTP/1.1 200 OK\r\n";
   s += "Content-Type: text/html\r\n\r\n";
   s += "<!DOCTYPE HTML>\r\n<html>\r\n";
-  s += "<meta http-equiv='refresh' content='5' >";
+  s += "<meta http-equiv='refresh' content='0.1' >";
+  s += "<meta http-equiv='repeat' content='0.1'>";
   
   if  (req.indexOf("/read"))
   { // If we're reading pins, print out those values:
@@ -287,7 +288,6 @@ void loop() {
     s += headingDegrees;
     s += "&deg";
     s += "<br>";
-    s += "<img src='http://1.bp.blogspot.com/-ZOTiMsWU51U/VjULnuhyYrI/AAAAAAAAAUM/sVpEHqz1TEA/s640/15%2B-%2B1.gif'>";
     s += "<html>";
   }
   else
